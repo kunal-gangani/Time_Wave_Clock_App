@@ -13,20 +13,28 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
   int hour = 0;
   int minute = 0;
   int second = 0;
-  Timer? timer;
+  bool isTimerOn = false;
 
-  @override
-  void initState() {
-    super.initState();
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      DateTime dateTime = DateTime.now();
-      setState(() {
-        hour = dateTime.hour;
-        minute = dateTime.minute;
-        second = dateTime.second;
-      });
+  Future<void> timerWatch() async {
+    await Future.delayed(const Duration(milliseconds: 50), () {
+      isTimerOn = true;
+      second++;
+      if (second > 59) {
+        second = 0;
+        minute++;
+      }
+      if (minute > 59) {
+        minute = 0;
+        hour++;
+      }
+      if (hour > 12) {
+        hour = 0;
+      }
+      setState(() {});
     });
+    timerWatch();
   }
+  List TimerWatchHist = [];
 
   @override
   Widget build(BuildContext context) {
@@ -114,14 +122,46 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (isTimerOn) {
+                    timerWatch();
+                  }
+                  setState(() {});
+                },
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                  const Color(0xffE7EEFB),
+                )),
                 child: const Icon(Icons.play_arrow),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  isTimerOn = false;
+                  setState(() {});
+                },
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                  const Color(0xffE7EEFB),
+                )),
                 child: const Icon(Icons.pause),
               ),
             ],
+          ),
+          SizedBox(
+            height: h * 0.01,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              hour = minute = second = 0;
+              isTimerOn = false;
+              TimerWatchHist = [];
+              setState(() {});
+            },
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+              const Color(0xffE7EEFB),
+            )),
+            child: const Icon(Icons.restart_alt),
           )
         ],
       ),

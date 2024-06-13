@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
         elevation: 5,
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Colors.white,
         child: Column(
           children: [
             const UserAccountsDrawerHeader(
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 "thekunalgangani@gmail.com",
                 style: TextStyle(color: Colors.black),
               ),
-              decoration: BoxDecoration(color: Colors.grey),
+              decoration: BoxDecoration(color: Color(0xffFFCC60)),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(
                     "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?size=626&ext=jpg&uid=R120576166&ga=GA1.1.1753208886.1717404746&semt=ais_user"),
@@ -79,9 +79,8 @@ class _HomePageState extends State<HomePage> {
                       fontSize: textScaler.scale(16), color: Colors.black),
                 ),
               ),
-              tileColor: Colors.grey,
+              tileColor: const Color(0xffFFCC60),
             ),
-            const Divider(),
             ListTile(
               leading: Text(
                 "2",
@@ -99,7 +98,45 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              tileColor: Colors.grey,
+              tileColor: const Color(0xffFFCC60),
+            ),
+            ListTile(
+              leading: Text(
+                "3",
+                style: TextStyle(
+                  fontSize: textScaler.scale(16),
+                ),
+              ),
+              title: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Strap Watch",
+                  style: TextStyle(
+                    fontSize: textScaler.scale(16),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              tileColor: const Color(0xffFFCC60),
+            ),
+            ListTile(
+              leading: Text(
+                "4",
+                style: TextStyle(
+                  fontSize: textScaler.scale(16),
+                ),
+              ),
+              title: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Timer",
+                  style: TextStyle(
+                    fontSize: textScaler.scale(16),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              tileColor: const Color(0xffFFCC60),
             ),
           ],
         ),

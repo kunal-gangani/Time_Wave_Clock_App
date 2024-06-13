@@ -28,6 +28,7 @@ class _StrapWatchComponentState extends State<StrapWatchComponent> {
 
   @override
   Widget build(BuildContext context) {
+    TextScaler textScaler = MediaQuery.textScalerOf(context);
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Center(
@@ -39,7 +40,7 @@ class _StrapWatchComponentState extends State<StrapWatchComponent> {
               child: CircularProgressIndicator(
                 strokeWidth: 1.5,
                 value: second / 60,
-                color: Colors.orange,
+                color: Colors.red,
               ),
             ),
             Transform.scale(
@@ -47,7 +48,7 @@ class _StrapWatchComponentState extends State<StrapWatchComponent> {
               child: CircularProgressIndicator(
                 strokeWidth: 1.5,
                 value: minute / 60,
-                color: Colors.red,
+                color: Colors.orange,
               ),
             ),
             Transform.scale(
@@ -58,6 +59,13 @@ class _StrapWatchComponentState extends State<StrapWatchComponent> {
                 color: Colors.black,
               ),
             ),
+            Text(
+              "${hour.toString().padLeft(2, '0')} : ${minute.toString().padLeft(2, '0')} : ${second.toString().padLeft(2, '0')} ",
+              style: TextStyle(
+                fontSize: textScaler.scale(20),
+                fontWeight: FontWeight.bold,
+              ),
+            )
           ],
         ),
       ),

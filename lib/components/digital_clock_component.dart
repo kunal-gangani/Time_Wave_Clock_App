@@ -31,6 +31,30 @@ class _DigitalClockComponentState extends State<DigitalClockComponent> {
     double h = MediaQuery.sizeOf(context).height;
     double w = MediaQuery.sizeOf(context).width;
     TextScaler textScaler = MediaQuery.textScalerOf(context);
+
+    List<String> weekDays = [
+      'Mon',
+      'Tues',
+      'Wed',
+      'Thurs',
+      'Fri',
+      'Sat',
+      'Sun'
+    ];
+    List<String> monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ];
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -107,9 +131,9 @@ class _DigitalClockComponentState extends State<DigitalClockComponent> {
                         ),
                       )),
                       Expanded(flex: 1,child: Container(color: Colors.transparent,
-                      child: const Row(
+                      child: Row(
                         children: [
-                          // Text("${dateTime}")
+                           //Text("${}")
                         ],
                       ),))
                     ],
