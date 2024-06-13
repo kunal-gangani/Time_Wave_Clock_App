@@ -61,16 +61,17 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(color: Color(0xffFFCC60)),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?size=626&ext=jpg&uid=R120576166&ga=GA1.1.1753208886.1717404746&semt=ais_user"),
+                    "https://media.licdn.com/dms/image/D5603AQEi1-HR6IF5-A/profile-displayphoto-shrink_400_400/0/1718204945962?e=1723680000&v=beta&t=HfFeYsL_qkE3no6l0gUKlg0JnnmJkCdNC9JUpo-TKDE"),
               ),
             ),
             ListTile(
               leading: Text(
-                "1",
+                "01",
                 style: TextStyle(
                   fontSize: textScaler.scale(16),
                 ),
               ),
+              subtitle: const Text("A modern digital Clock"),
               title: TextButton(
                 onPressed: () {},
                 child: Text(
@@ -83,11 +84,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: Text(
-                "2",
+                "02",
                 style: TextStyle(
                   fontSize: textScaler.scale(16),
                 ),
               ),
+              subtitle: const Text("A classic Analog Clock"),
               title: TextButton(
                 onPressed: () {},
                 child: Text(
@@ -102,11 +104,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: Text(
-                "3",
+                "03",
                 style: TextStyle(
                   fontSize: textScaler.scale(16),
                 ),
               ),
+              subtitle: const Text("A Strap Watch"),
               title: TextButton(
                 onPressed: () {},
                 child: Text(
@@ -121,11 +124,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: Text(
-                "4",
+                "04",
                 style: TextStyle(
                   fontSize: textScaler.scale(16),
                 ),
               ),
+              subtitle: const Text("A Timer to track your records"),
               title: TextButton(
                 onPressed: () {},
                 child: Text(
