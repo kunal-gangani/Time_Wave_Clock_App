@@ -16,9 +16,11 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
   bool isTimerOn = false;
 
   Future<void> timerWatch() async {
+    isTimerOn = true;
     await Future.delayed(const Duration(milliseconds: 50), () {
-      isTimerOn = true;
-      second++;
+      if (isTimerOn) {
+        second++;
+      }
       if (second > 59) {
         second = 0;
         minute++;
@@ -32,8 +34,11 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
       }
       setState(() {});
     });
-    timerWatch();
+    if (isTimerOn) {
+      timerWatch();
+    }
   }
+
   List timerWatchHist = [];
 
   @override
@@ -123,7 +128,7 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  if (isTimerOn) {
+                  if (!isTimerOn) {
                     timerWatch();
                   }
                   setState(() {});
@@ -137,6 +142,11 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
               ElevatedButton(
                 onPressed: () {
                   isTimerOn = false;
+                  timerWatchHist.add({
+                    'hour': hour,
+                    'minute': minute,
+                    'second': second,
+                  });
                   setState(() {});
                 },
                 style: ButtonStyle(
@@ -162,7 +172,32 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
               const Color(0xffE7EEFB),
             )),
             child: const Icon(Icons.restart_alt),
-          )
+          ),
+          SizedBox(
+            height: h * 0.01,
+          ),
+          ...timerWatchHist.map((e) => Container(
+                width: w,
+                height: h * 0.05,
+                padding: const EdgeInsets.all(5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lap 1",
+                      style: TextStyle(
+                        fontSize: textScaler.scale(18),
+                      ),
+                    ),
+                    Text(
+                      "${e['hour'].toString().padLeft(2,'0')} : ${e['minute'].toString().padLeft(2,'0')} : ${e['second'].toString().padLeft(2,'0')}",
+                      style: TextStyle(
+                        fontSize: textScaler.scale(18),
+                      ),
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );
