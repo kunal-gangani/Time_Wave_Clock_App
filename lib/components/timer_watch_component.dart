@@ -34,7 +34,7 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
     });
     timerWatch();
   }
-  List TimerWatchHist = [];
+  List timerWatchHist = [];
 
   @override
   Widget build(BuildContext context) {
@@ -154,7 +154,7 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
             onPressed: () {
               hour = minute = second = 0;
               isTimerOn = false;
-              TimerWatchHist = [];
+              timerWatchHist = [];
               setState(() {});
             },
             style: ButtonStyle(

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:clock_app/globals/headers.dart';
 import 'package:flutter/material.dart';
 
 class AnalogClockComponent extends StatefulWidget {
@@ -57,21 +58,27 @@ class _AnalogClockComponentState extends State<AnalogClockComponent> {
                         ),
                       )),
               Transform.rotate(
-                  angle: (hour % 12 + (minute / 60)) * (pi*2) / 12,
-                  child: const Divider(
-                    thickness: 4,
-                    endIndent: 150,
-                    indent: 70,
-                    color: Colors.black,
-                  )),
+                angle: pi/2,
+                child: Transform.rotate(
+                    angle: (hour % 12 + (minute / 60)) * (pi*2) / 12,
+                    child: const Divider(
+                      thickness: 4,
+                      endIndent: 150,
+                      indent: 70,
+                      color: Colors.black,
+                    )),
+              ),
               Transform.rotate(
-                  angle: (minute*(pi*2))/60,
-                  child: const Divider(
-                    thickness: 4,
-                    endIndent: 150,
-                    indent: 45,
-                    color: Colors.orange,
-                  )),
+                angle: pi/2,
+                child: Transform.rotate(
+                    angle: (minute*(pi*2))/60,
+                    child: const Divider(
+                      thickness: 4,
+                      endIndent: 150,
+                      indent: 45,
+                      color: Colors.orange,
+                    )),
+              ),
               Transform.rotate(
                   angle: (second*(pi*2))/60,
                   child: const Divider(
