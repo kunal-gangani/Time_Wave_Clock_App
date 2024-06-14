@@ -2,16 +2,12 @@
 
 A beautifully designed and fully functional clock app built using Flutter. This app features multiple clock designs, alarms, timers, and a world clock feature, making it the perfect companion for managing your time effectively.
 
-![Clock Screenshot](path/to/your/screenshot.png)
-
 ## 🚀 Features
 
-- **Analog and Digital Clocks**: Choose between a classic analog clock or a sleek digital display.
-- **Alarms**: Set multiple alarms with customizable tones.
+- **Digital Clock**: Modern Digital Clock with Date and Time
+- **Analog Clock**: Classic styled Analog Clock
 - **Timers**: Use countdown timers for various tasks.
-- **World Clock**: Track time in different time zones.
-- **Stopwatch**: Keep track of time with precision.
-- **Customizable Themes**: Switch between light and dark themes.
+- **Strap Watch**: New Strap styled watch
 
 ## 📸 Screenshots
 
