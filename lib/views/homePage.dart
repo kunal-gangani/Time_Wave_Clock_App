@@ -157,45 +157,45 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
             activeIcon: Icon(
-              Icons.watch_outlined,
+              Icons.watch,
               color: Color(0xff4C2B44),
             ),
             label: "Digital Clock",
             icon: Icon(
-              Icons.watch,
+              Icons.watch_outlined,
               color: Colors.black,
             ),
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(
-              Icons.watch_later_rounded,
+              Icons.watch_later,
               color: Color(0xff4C2B44),
             ),
             icon: Icon(
-              Icons.watch_later,
+              Icons.watch_later_outlined,
               color: Colors.black,
             ),
             label: "Analog Clock",
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(
-              Icons.watch_outlined,
+              Icons.watch,
               color: Color(0xff4C2B44),
             ),
             label: "Strap Watch",
             icon: Icon(
-              Icons.watch,
+              Icons.watch_outlined,
               color: Colors.black,
             ),
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(
-              Icons.watch_later_rounded,
+              Icons.alarm,
               color: Color(0xff4C2B44),
             ),
             label: "Timer",
             icon: Icon(
-              Icons.watch_later_rounded,
+              Icons.access_alarm,
               color: Colors.black,
             ),
           )

@@ -40,6 +40,7 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
   }
 
   List timerWatchHist = [];
+  int lapNumber = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +177,11 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
           SizedBox(
             height: h * 0.01,
           ),
-          ...timerWatchHist.map((e) => Container(
+          ...timerWatchHist.map(
+            (e) {
+              lapNumber = timerWatchHist.length;
+              setState(() {});
+              return Container(
                 width: w,
                 height: h * 0.05,
                 padding: const EdgeInsets.all(5),
@@ -184,20 +189,22 @@ class _TimerWatchComponentState extends State<TimerWatchComponent> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Lap 1",
+                      "Lap $lapNumber",
                       style: TextStyle(
                         fontSize: textScaler.scale(18),
                       ),
                     ),
                     Text(
-                      "${e['hour'].toString().padLeft(2,'0')} : ${e['minute'].toString().padLeft(2,'0')} : ${e['second'].toString().padLeft(2,'0')}",
+                      "${e['hour'].toString().padLeft(2, '0')} : ${e['minute'].toString().padLeft(2, '0')} : ${e['second'].toString().padLeft(2, '0')}",
                       style: TextStyle(
                         fontSize: textScaler.scale(18),
                       ),
                     ),
                   ],
                 ),
-              ))
+              );
+            },
+          ),
         ],
       ),
     );
