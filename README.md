@@ -11,9 +11,23 @@ A beautifully designed and fully functional clock app built using Flutter. This 
 
 ## 📸 Screenshots
 
-| Analog Clock | Digital Clock | World Clock |
-| ------------ | ------------- | ----------- |
-| ![Analog](path/to/analog_screenshot.png) | ![Digital](path/to/digital_screenshot.png) | ![World](path/to/world_clock_screenshot.png) |
+Analog Clock
+
+<img src = "https://github.com/kunal-gangani/Time_Wave_Clock_App/assets/150250846/5c757872-dcd2-4ee7-a938-e3538b23b3d8" height = "400em">
+
+Digital Clock
+
+<img src = "https://github.com/kunal-gangani/Time_Wave_Clock_App/assets/150250846/a821bdd9-aa9e-4246-a7f7-6a89208f42dd" height = "400em">
+
+Strap Watch
+
+<img src = "https://github.com/kunal-gangani/Time_Wave_Clock_App/assets/150250846/87981439-63db-4130-8b83-2c9a3116de26" height = "400em">
+
+Timer / Stopwatch
+
+<img src = "https://github.com/kunal-gangani/Time_Wave_Clock_App/assets/150250846/c8af3b37-75d5-4786-ac8b-9bca6b5dcc95" height = "400em">
+
+
 
 ## 📦 Installation
 
